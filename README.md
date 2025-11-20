@@ -117,6 +117,19 @@ Prerequisites:
 - Python 3.8 / 3.9 / 3.10 recommended.
 - Create a virtual environment and install dependencies (some submodules provide their own requirements).
 
+| Category | Packages (tested version) |
+|----------|---------------------------|
+| Core runtime | `numpy 1.26`, `scipy 1.11`, `matplotlib 3.8`, `opencv-python 4.9`, `Pillow 10`, `tqdm 4.66`, `PyYAML 6.0` |
+| Machine learning | `torch 2.2`, `torchvision 0.17`, `scikit-learn 1.3`, `tensorboard 2.16`, `onnxruntime 1.17`, `thop 0.1` |
+| Detection extras | `pycocotools 2.0.7`, `seaborn 0.13`, `pandas 2.1` |
+| Environment/sim | `gym 0.26`, `pygame 2.5` (only when running the tip game) |
+| Imaging libraries | `scikit-image 0.22` (used by `AI_Tip_Main.py`) |
+
+Nanonis API
+Feedback control, bias/current pulses, and scanning operations are executed through the official Nanonis TCP programming interface.
+The STM control layer is adapted from the open-source library:
+https://github.com/dilwong/nanonis_control
+
 Install example (global runtime deps):
 
 ```powershell
@@ -257,4 +270,5 @@ Integration with agents
 Appendix: internal observation & action format
 - Action space: 4D continuous — (dx, dy, bias, current). x,y are offsets relative to the molecule center (discretized to grid points in code), and bias/current are clamped to the defined ranges.
 - Observation: the environment returns the molecule state vector (including path bit) as a float32 array.
+
 
