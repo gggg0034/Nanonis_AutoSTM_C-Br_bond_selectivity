@@ -188,20 +188,6 @@ Key file index (quick lookup)
 - `utils.py` — utility functions
 
 
-Done and next steps
--------------------
-I have scanned the repository and generated this English README from the code and comments. I can also:
-
-- Expand the "Quick start" section with step-by-step installation commands tailored to your environment (GPU/CPU, specific Python).
-- Auto-generate a short API reference for core modules (extract classes/functions and docstrings).
-- Add a minimal runnable example script that uses the simulation environment and trains a small SAC agent (fast smoke-test).
-
-Would you like me to (choose one):
-
-1) Add a step-by-step installation & run guide with PowerShell commands, or
-2) Paste the full English README text here (already written to file), or
-3) Create a short example script to run in simulation? 
-
 
 Gameplay (interactive STM simulation)
 ------------------------------------
@@ -270,5 +256,6 @@ Integration with agents
 Appendix: internal observation & action format
 - Action space: 4D continuous — (dx, dy, bias, current). x,y are offsets relative to the molecule center (discretized to grid points in code), and bias/current are clamped to the defined ranges.
 - Observation: the environment returns the molecule state vector (including path bit) as a float32 array.
+
 
 
